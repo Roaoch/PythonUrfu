@@ -5,8 +5,8 @@ from errors import OutOfDataError
 
 try:
     input_connect = InputConnect(
-        input("Введите название файла: ") or "vacancies_by_year.csv",
-        input("Введите название профессии: ") or "Аналитик"
+        input("Введите название файла: "),
+        input("Введите название профессии: ")
     )
     report = Report()
 
