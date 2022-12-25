@@ -1,0 +1,2 @@
+class OutOfDataError(BaseException):
+    pass

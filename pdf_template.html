@@ -1,0 +1,54 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #000;
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        tr, td {
+            padding: 7px;
+            max-width: 300px;
+        }
+
+        tr:first-child {
+            font-weight: bold;
+        }
+
+        table:nth-child(6) td:nth-child(3n) {
+            border-top: none;
+            border-bottom: none;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Аналитика по зарплатам и городам для профессии {{ vacancy_name }}!</h1>
+    <img src="{{ img }}" width="100%">
+    {% for sheet in workbook %}
+        <h2>{{ sheet.title }}</h2>
+        <table>
+            {% for cells in sheet.values %}
+                <tr>
+                    {% for value in cells %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+</body>
+</html>
